@@ -32,10 +32,11 @@ App({
           }
         }
       }),
-      wx.setStorageSync('user-token', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHBpcmUiOiIyMDIwLTEyLTAzIDExOjM0OjA1IiwidXNlcklkIjoyOH0.76TXcXHuqD6sK4AV9a86M7aBm41nlED_TQzz4b4HeqY')
+      wx.setStorageSync('user-token', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHBpcmUiOiIyMDIwLTEyLTEzIDExOjM4OjQ0IiwidXNlcklkIjoyOH0.dyKf5ZFhvZQm8zyfrvAemSsLlxRa5jhSZVKRvuSV7r4')
   },
   globalData: {
     userInfo: null,
-    basicUrl: "http://localhost:8080"
+    basicUrl: "http://localhost:8080",
+    whitOutServer:true
   }
 })

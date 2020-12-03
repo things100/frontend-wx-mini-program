@@ -64,6 +64,13 @@
                 {
                     "name": "pages/thing-group/thing-group",
                     "pathName": "pages/thing-group/thing-group",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/thing-group-add/thing-group-add",
+                    "pathName": "pages/thing-group-add/thing-group-add",
+                    "query": "",
                     "scene": null
                 }
             ]

@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/thing-group/thing-group",
-    "pages/suggestion/suggestion"
+    "pages/suggestion/suggestion",
+    "pages/thing-group-add/thing-group-add"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,16 +17,18 @@
     "list": [
       {
         "pagePath": "pages/thing-group/thing-group",
-        "text": "事情组"
+        "text": "计划"
       },
       {
         "pagePath": "pages/suggestion/suggestion",
-        "text": "建议与意见"
+        "text": "建议与反馈"
       }
     ]
   },
+  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
+    "l-icon": "./miniprogram_npm/lin-ui/icon/index"
   },
   "useExtendedLib": {
     "weui": true

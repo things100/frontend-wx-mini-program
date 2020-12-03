@@ -1,9 +1,19 @@
 <view class="container">
-    <block wx:for="{{thingsGroup}}" wx:key="index">
-        <l-card type="cover" image="{{item.cover}}" title="{{item.title}}">
-            <view class="content">
-                {{item.description}}
-            </view>
-        </l-card>
-    </block>
+    <swiper vertical="true" class="swiper–container" indicator-dots="true" indicator-color="white" autoplay="true"
+        interval="3000">
+        <block wx:for="{{thingsGroup}}" wx:key="index">
+            <swiper-item>
+                <view class="text-container">
+                    <text class="title" selectable="true">{{item.title}}</text>
+                    <text class="desciption" selectable="true">{{item.description}}</text>
+                </view>
+                <image mode="scaleToFill" class="sl-image" src="{{item.cover}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="button-container">
+        <l-button icon='add' bind:tap="addThingGroup" icon-color='white' type='success' shape='semicircle' width='560' height='90'>创建新计划
+        </l-button>
+    </view>
 </view>
