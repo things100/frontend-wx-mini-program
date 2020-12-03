@@ -13,7 +13,7 @@
     </swiper>
 
     <view class="button-container">
-        <l-button icon='add' bind:tap="addThingGroup" icon-color='white' type='success' shape='semicircle' width='560' height='90'>创建新计划
-        </l-button>
+        <van-button class="cs" icon='add' plain hairline round bind:tap="addThingGroup" type='primary' size="normal">创建新计划
+        </van-button>
     </view>
 </view>

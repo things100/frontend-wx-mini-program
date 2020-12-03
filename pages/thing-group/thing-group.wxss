@@ -42,5 +42,12 @@ swiper {
 
 .button-container {
     position: absolute;
-    bottom: 100rpx;
+    bottom: 100px;
+    width: 600rpx;
 }
+
+.cs{  
+    width: 600rpx;
+    height: 100rpx;
+}
+

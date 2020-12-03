@@ -15,18 +15,13 @@ Page({
         titleColor: '',
         description: '',
         descriptionColor: '',
-        cover: '',
-        ruleForm:{
-            title: '',
-        description: '',
-        }
+        cover: ''
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.lin.initValidateForm(this);
     },
 
     /**
@@ -94,10 +89,25 @@ Page({
     },
 
     submit(event) {
+        const {detail} = event;
         console.log(event)
+        console.log(this.data.title)
+        console.log(detail)
     },
-    reset(event) {
-        console.log(event)
-        wx.lin.resetForm('thingGroupAddForm');
-    }
+    // reset(event) {
+    //     console.log(event)
+    //     wx.lin.resetForm('thingGroupAddForm');
+    // },
+    change(e) {
+        let items = this.data.items;
+        items.forEach(item => {
+          if(item.name == e.detail.key) {
+            item.checked = e.detail.checked;
+          }
+        });
+        this.setData({
+          items: items
+        });
+      }
+     
 })

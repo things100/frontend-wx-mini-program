@@ -1,30 +1,29 @@
 <view class="container">
-    <l-form l-form-btn-class="l-form-btn-class" name="thingGroupAddForm" bind:linsubmit="submit">
-        <view class="text-container">
-            <l-form-item name="title">
-                <l-input class="title" id="title" hide-label="true" type="text" clear="true" selectable="true"
-                    required="true" placeholder="计划的标题" value="{{ruleForm.title}}"/>
-            </l-form-item>
-            <!-- TODO 颜色选择器 -->
-            <l-form-item name="description">
-                <l-textarea id="textarea" border="{{false}}" class="textarea" indicator="true" maxlength="520"
-                    auto-height="{{true}}" placeholder="对于计划的期许" value="{{ruleForm.description}}" />
-            </l-form-item>
-        </view>
-        <!-- 背景图 -->
-        <image mode="scaleToFill" class="bg-image" src="{{cover}}"></image>
+    <l-form name="thingGroupAddForm" bind:linsubmit="submit">
+        <l-form-item name="title">
+            <l-input id="title" class="title" hide-label="true" type="text" clear="true" selectable="true" required="true"
+                placeholder="计划的标题" value="{{title}}" />
+        </l-form-item>
+        <!-- TODO 颜色选择器 -->
+        <l-form-item name="description">
+            <l-textarea id="description" border="{{false}}" class="textarea" indicator="true" maxlength="520"
+                auto-height="{{true}}" placeholder="对于计划的期许" value="{{ruleForm.description}}" />
+        </l-form-item>
 
-        <view class="btn-container">
-            <view>
-                <l-button type="success" plain bind:tap='chooseBgImg'>选择背景图片</l-button>
-            </view>
-            <view slot="submit">
-                <l-button bind:tap="submit">提交</l-button>
-            </view>
-            <view slot="reset">
-                <l-button type="success" bind:tap="reset">重置</l-button>
-            </view>
+        <view>
+            <l-button type="success" plain bind:tap='chooseBgImg'>选择背景图片</l-button>
+        </view>
+        <!-- 提交 -->
+        <view slot="submit">
+            <l-button>提交</l-button>
+        </view>
+        <!-- 重置 -->
+        <view slot="reset">
+            <l-button type="success">重置</l-button>
         </view>
     </l-form>
-</view>
 
+    <image id="bgImg" mode="scaleToFill" class="bg-image" src="{{cover}}"></image>
+
+
+</view>
