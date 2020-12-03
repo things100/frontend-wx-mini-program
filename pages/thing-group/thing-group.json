@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-msg": "weui-miniprogram/msg/msg",
+    "l-card":"../../miniprogram_npm/lin-ui/card/index"
+  }
+}
