@@ -1,8 +1,9 @@
 const app = getApp();
 
-function request(path, param, method) {
+function request(path, param, method, showSuccessToast) {
     // 获取当前登录的用户的Token
     let userToken = wx.getStorageSync('user-token');
+    console.log('--------')
     // 发起请求w
     return new Promise((resolve, reject) => {
         wx.request({
@@ -11,7 +12,8 @@ function request(path, param, method) {
             method: method,
             dataType: method == 'POST' ? 'json' : '',
             header: {
-                Authorization: userToken
+                "Authorization": userToken,
+                "Content-Type": "application/json"
             },
             success: (res) => {
                 console.log(res)
@@ -19,28 +21,38 @@ function request(path, param, method) {
                     if (0 != res.data.code) {
                         wx.showToast({
                             title: res.data.message,
-                            duration: 3000,
+                            icon: 'none',
+                            duration: 3000
+                        })
+                    };
+                    console.log("showSuccessToast")
+                    console.log(showSuccessToast)
+                    if (showSuccessToast) {
+                        console.log("应该显示遮罩")
+                        wx.showToast({
                             mask: true,
-                            icon: 'none'
-                        });
+                            title: '成功',
+                            icon: 'success',
+                            duration: 2000
+                        })
                     }
                     resolve(res.data)
                 } else {
                     wx.showToast({
-                        title: '系统繁忙，请稍后再试' + res.statusCode,
-                        duration: 3000,
-                        mask: true,
-                        icon: 'none'
-                    });
+                        title: "系统繁忙，请稍后再试" + res.statusCode,
+                        icon: 'none',
+                        duration: 3000
+                    })
                 }
             },
             fail: (res) => {
+                console.log("请求接口失败" + JSON.stringify(res))
                 wx.showToast({
-                    title: '系统繁忙，请稍后再试',
+                    title: "系统繁忙，请稍后再试",
+                    icon: 'none',
                     duration: 3000,
-                    mask: true,
-                    icon: 'none'
-                });
+                    duration: 2000
+                })
                 reject(res);
             }
         })

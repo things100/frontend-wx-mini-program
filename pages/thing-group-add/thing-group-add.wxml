@@ -1,29 +1,27 @@
 <view class="container">
-    <l-form name="thingGroupAddForm" bind:linsubmit="submit">
-        <l-form-item name="title">
-            <l-input id="title" class="title" hide-label="true" type="text" clear="true" selectable="true" required="true"
-                placeholder="计划的标题" value="{{title}}" />
-        </l-form-item>
-        <!-- TODO 颜色选择器 -->
-        <l-form-item name="description">
-            <l-textarea id="description" border="{{false}}" class="textarea" indicator="true" maxlength="520"
-                auto-height="{{true}}" placeholder="对于计划的期许" value="{{ruleForm.description}}" />
-        </l-form-item>
-
-        <view>
-            <l-button type="success" plain bind:tap='chooseBgImg'>选择背景图片</l-button>
-        </view>
-        <!-- 提交 -->
-        <view slot="submit">
-            <l-button>提交</l-button>
-        </view>
-        <!-- 重置 -->
-        <view slot="reset">
-            <l-button type="success">重置</l-button>
-        </view>
-    </l-form>
-
-    <image id="bgImg" mode="scaleToFill" class="bg-image" src="{{cover}}"></image>
-
-
+    <van-cell-group>
+        <form bindsubmit="submitThingGroup" bindreset="resetThingGroup">
+            <van-field clickable required clearable name="title" value="{{ title }}" input-align="left" type="text"
+                label="标题" placeholder="请输入计划标题" border="{{ true }}" data-input-type="title" bind:change="onChangeInput"
+                maxlength="52" show-word-limit="{{true}}" />
+            <van-field value="{{ description }}" input-class="desc-input" name="description" required clearable
+                input-align="left" type="text" label="期望" type="textarea" placeholder="请输入对于计划的期望"
+                autosize="{{ {minHeight: 100} }}" border="{{ true }}" maxlength="520" show-word-limit="{{true}}"
+                data-input-type="description" bind:change="onChangeInput" />
+            <van-cell title="背景图" required clearable custom-class="cs-img-container">
+                <!-- <van-image width="10rem" value-class="vc-img" height="10rem" fit="contain" src="{{cover}}"
+                    bind:click="changeImg" /> -->
+                <van-uploader name="bgImg" value="{{cover}}" upload-icon="photo-o" max-count file-list="{{ cover }}"
+                    compressed="{{false}}" image-fit="aspectFit" accept="media" bind:after-read="afterRead"
+                    bind:delete="deleteBgImg" max-duration="30" />
+            </van-cell>
+            <van-cell title="是否公开" required>
+                <van-switch name="open" checked="{{open}}" active-color="#07c160" size="24px"
+                    bind:change="openChange" />
+            </van-cell>
+            <view class="btn-container">
+                <van-button type="primary" form-type="submit" custom-class="cs-btn" round>提交</van-button>
+            </view>
+        </form>
+    </van-cell-group>
 </view>

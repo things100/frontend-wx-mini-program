@@ -28,6 +28,14 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-toast": "@vant/weapp/toast/index"
+
   },
   "useExtendedLib": {
     "weui": true

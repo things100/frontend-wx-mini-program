@@ -3,7 +3,15 @@
 import {
     thingGroup,
     thingGroupPage
-} from '../../data/data'
+} from '../../data/data';
+
+import {
+    request
+} from '../../utils/http-client';
+
+import Toast from '@vant/weapp/toast/toast';
+
+const app = getApp();
 
 Page({
 
@@ -15,13 +23,28 @@ Page({
         titleColor: '',
         description: '',
         descriptionColor: '',
-        cover: ''
+        cover: null,
+        open: true,
+        coverType: 1
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        if (app.globalData.whitOutServer) {
+            let record = thingGroupPage.data.records[0];
+            this.setData({
+                title: record.title,
+                description: record.description,
+                cover: [{
+                    name: '背景图',
+                    url: record.cover,
+                    isImage: true,
+                    deletable: true
+                }]
+            })
+        }
     },
 
     /**
@@ -75,7 +98,8 @@ Page({
     /**
      * 选择背景图片
      */
-    chooseBgImg() {
+    changeImg(event) {
+        console.log(event)
         wx.chooseImage({
             count: 1,
             sizeType: ['original'],
@@ -87,27 +111,50 @@ Page({
             }
         })
     },
-
-    submit(event) {
-        const {detail} = event;
-        console.log(event)
-        console.log(this.data.title)
-        console.log(detail)
+    submitThingGroup(event) {
+        console.log(event);
+        request('/thingsGroup', {
+            "title": this.data.title,
+            "description": this.data.description,
+            "cover": this.data.cover[0].url,
+            "coverType": this.data.coverType,
+            "open": this.data.open
+        }, 'POST', true).then((res) => {
+            console.log(res)
+        })
     },
-    // reset(event) {
-    //     console.log(event)
-    //     wx.lin.resetForm('thingGroupAddForm');
-    // },
-    change(e) {
-        let items = this.data.items;
-        items.forEach(item => {
-          if(item.name == e.detail.key) {
-            item.checked = e.detail.checked;
-          }
-        });
+    openChange(event) {
         this.setData({
-          items: items
-        });
-      }
-     
+            open: !this.data.open
+        })
+    },
+    afterRead(event) {
+        console.log(event)
+        this.setData({
+            cover: [{
+                url: event.detail.file.url
+            }]
+        })
+    },
+    deleteBgImg(event) {
+        console.log(event)
+        this.setData({
+            cover: null
+        })
+    },
+
+    onChangeInput(event) {
+        switch (event.currentTarget.dataset.inputType) {
+            case 'title':
+                this.setData({
+                    title: event.detail
+                });
+                break;
+            case 'description':
+                this.setData({
+                    description: event.detail
+                });
+                break;
+        }
+    }
 })

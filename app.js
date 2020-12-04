@@ -37,6 +37,6 @@ App({
   globalData: {
     userInfo: null,
     basicUrl: "http://localhost:8080",
-    whitOutServer:true
+    whitOutServer:false
   }
 })

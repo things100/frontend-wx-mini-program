@@ -1,6 +1,6 @@
 <view class="container">
     <swiper vertical="true" class="swiper–container" indicator-dots="true" indicator-color="white" autoplay="true"
-        interval="3000">
+        interval="4000">
         <block wx:for="{{thingsGroup}}" wx:key="index">
             <swiper-item>
                 <view class="text-container">
@@ -13,7 +13,8 @@
     </swiper>
 
     <view class="button-container">
-        <van-button class="cs" icon='add' plain hairline round bind:tap="addThingGroup" type='primary' size="normal">创建新计划
+        <van-button custom-class="cs" icon='add' hairline round bind:tap="addThingGroup" type='primary' size="normal">创建新计划
         </van-button>
     </view>
+
 </view>

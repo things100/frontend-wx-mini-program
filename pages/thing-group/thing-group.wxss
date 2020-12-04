@@ -29,25 +29,24 @@ swiper {
     margin: 200rpx 50rpx 0rpx 50rpx;
 }
 
-.text-container text{
+.text-container text {
     color: white;
 }
 
-.title{
+.title {
     font-size: xx-large;
 }
-.description{
+
+.description {
     font-size: medium;
 }
 
 .button-container {
     position: absolute;
     bottom: 100px;
-    width: 600rpx;
 }
 
-.cs{  
-    width: 600rpx;
-    height: 100rpx;
+.cs{
+    height: 90rpx !important;
+    width: 600rpx !important;
 }
-

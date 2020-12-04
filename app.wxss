@@ -13,3 +13,6 @@
 page{
   height: 100%;
 }
+.cs-switch{
+  z-index: 100 !important;
+}

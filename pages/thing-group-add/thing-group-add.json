@@ -1,5 +1,10 @@
 {
   "usingComponents": {
-    
-  }
+    "van-field": "@vant/weapp/field/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "navigationBarTitleText": "创建新计划"
 }
