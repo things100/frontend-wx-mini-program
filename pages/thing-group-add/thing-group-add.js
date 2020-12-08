@@ -113,7 +113,7 @@ Page({
     },
     submitThingGroup(event) {
         console.log(event);
-        request('/thingsGroup', {
+        request('/thingGroup', {
             "title": this.data.title,
             "description": this.data.description,
             "cover": this.data.cover[0].url,

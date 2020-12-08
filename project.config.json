@@ -72,6 +72,24 @@
                     "pathName": "pages/thing-group-add/thing-group-add",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/suggestion/suggestion",
+                    "pathName": "pages/suggestion/suggestion",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "事情列表",
+                    "pathName": "pages/things/things",
+                    "query": "thingGroupId=5",
+                    "scene": null
+                },
+                {
+                    "name": "pages/thing-add/thing-add",
+                    "pathName": "pages/thing-add/thing-add",
+                    "query": "thingGroupId=5",
+                    "scene": null
                 }
             ]
         }

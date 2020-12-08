@@ -3,15 +3,15 @@
     "pages/index/index",
     "pages/thing-group/thing-group",
     "pages/suggestion/suggestion",
-    "pages/thing-group-add/thing-group-add"
+    "pages/thing-group-add/thing-group-add",
+    "pages/things/things"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "100things",
     "navigationBarTextStyle": "black"
   },
-  "entryPagePath": "pages/index/index",
   "tabBar": {
     "position": "top",
     "list": [
@@ -35,11 +35,11 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-overlay": "@vant/weapp/overlay/index",
     "van-toast": "@vant/weapp/toast/index"
-
   },
   "useExtendedLib": {
     "weui": true
   },
   "darkmode": true,
-  "permission": {}
+  "permission": {},
+  "debug": false
 }

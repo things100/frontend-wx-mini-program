@@ -2,7 +2,7 @@
     <swiper vertical="true" class="swiper–container" indicator-dots="true" indicator-color="white" autoplay="true"
         interval="4000">
         <block wx:for="{{thingsGroup}}" wx:key="index">
-            <swiper-item>
+            <swiper-item data-thing-group-id="{{item.id}}" bind:tap="jumpToThings">
                 <view class="text-container">
                     <text class="title" selectable="true">{{item.title}}</text>
                     <text class="desciption" selectable="true">{{item.description}}</text>

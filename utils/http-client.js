@@ -3,11 +3,12 @@ const app = getApp();
 function request(path, param, method, showSuccessToast) {
     // 获取当前登录的用户的Token
     let userToken = wx.getStorageSync('user-token');
-    console.log('--------')
-    // 发起请求w
+    let completeUrl = app.globalData.basicUrl + path;
+    console.log('request:' + completeUrl)
+    // 发起请求
     return new Promise((resolve, reject) => {
         wx.request({
-            url: app.globalData.basicUrl + path,
+            url: completeUrl,
             data: param,
             method: method,
             dataType: method == 'POST' ? 'json' : '',
@@ -24,17 +25,16 @@ function request(path, param, method, showSuccessToast) {
                             icon: 'none',
                             duration: 3000
                         })
-                    };
-                    console.log("showSuccessToast")
-                    console.log(showSuccessToast)
-                    if (showSuccessToast) {
-                        console.log("应该显示遮罩")
-                        wx.showToast({
-                            mask: true,
-                            title: '成功',
-                            icon: 'success',
-                            duration: 2000
-                        })
+                    } else {
+                        if (showSuccessToast) {
+                            console.log("应该显示遮罩")
+                            wx.showToast({
+                                mask: true,
+                                title: '成功',
+                                icon: 'success',
+                                duration: 2000
+                            })
+                        }
                     }
                     resolve(res.data)
                 } else {

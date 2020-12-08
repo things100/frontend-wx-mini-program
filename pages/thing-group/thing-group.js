@@ -85,7 +85,7 @@ Page({
                 thingsGroup: thingGroupPage.data.records
             })
         } else {
-            request('/thingsGroup/page', {
+            request('/thingGroup/page', {
                     page: 1,
                     perPage: 15
                 }, 'GET')
@@ -95,5 +95,10 @@ Page({
                     })
                 })
         }
+    },
+    jumpToThings(event){
+        wx.navigateTo({
+          url: '/pages/things/things?thingGroupId='+event.currentTarget.dataset.thingGroupId,
+        })
     }
 })

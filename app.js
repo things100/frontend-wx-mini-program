@@ -36,7 +36,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    basicUrl: "http://localhost:8080",
+    // basicUrl: "http://localhost:8080",
+    basicUrl:"http://192.168.22.156:8080",
     whitOutServer:false
   }
 })

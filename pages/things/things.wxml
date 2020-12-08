@@ -1,0 +1,42 @@
+<view class="container">
+    <image class="bg-img" src="{{thingGroup.cover}}" mode="aspectFill"></image>
+    <view class="content-container">
+        <scroll-view class="thing-group-description" scroll-y="{{true}}">
+            <text>
+                {{thingGroup.description}}
+            </text>
+        </scroll-view>
+        <van-progress color="#FF69B4" percentage="{{progress}}" />
+
+        <block wx:for="{{things}}" wx:key="index">
+            <view class="title-row">
+                <text class="sortNum">{{item.sortNum}}</text>
+                <van-checkbox data-index="{{index}}" value="{{ item.complete  }}" shape="round" checked-color="#FF69B4"
+                    bind:change="onCompleteChange">
+                    <text class="title">{{item.title}}</text>
+                </van-checkbox>
+            </view>
+        </block>
+    </view>
+
+    <view class="button-container">
+        <van-button custom-class="cs" icon='add' hairline round bind:tap="addThing" type='primary' size="normal">添加新事项
+        </van-button>
+    </view>
+
+    <van-popup round custom-style="height: 30%" closeable position="bottom" show="{{ showAddThing }}"
+        bind:close="onCloseAddThing">
+        <view class="add-thing-container">
+            <van-cell-group>
+                <van-field clickable required clearable name="title" value="{{ title }}" input-align="left" type="text"
+                    label="标题" placeholder="请输入计划标题" border="{{ true }}" data-input-type="title"
+                    bind:change="onChangeInput" maxlength="52" show-word-limit="{{true}}" />
+                <van-cell title="序号">
+                    <van-stepper value="{{sortNum}}" integer bind:change="onChangeInput" data-input-type="stepper" />
+                </van-cell>
+                <van-button type="primary" bind:tap="submit" custom-class="cs-btn" round>提交</van-button>
+            </van-cell-group>
+        </view>
+    </van-popup>
+
+</view>

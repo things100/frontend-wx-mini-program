@@ -1,0 +1,57 @@
+.button-container {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+}
+
+.cs {
+    background-color: #FF69B4 !important;
+    height: 90rpx !important;
+    width: 80% !important;
+    left: 10% !important;
+}
+
+.content-container{
+    margin: 20rpx 20rpx 0 20rpx;
+}
+
+.title-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20rpx;
+}
+
+.sortNum{
+    margin-right: 10rpx;
+    font-size: larger;
+    font-weight: bold;
+}
+.van-progress{
+    margin: 20rpx 0 10rpx 0;
+}
+.title{
+    color: lightpink;
+}
+
+.cs-btn {
+    margin-top: 30rpx;
+    width: 80% !important;
+    margin-left: 10% !important;
+}
+
+.add-thing-container{
+    margin-top: 90rpx !important;
+}
+
+.bg-img{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400rpx;
+    -webkit-filter: blur(10px);
+}
+.thing-group-description{
+    height: 400rpx;
+}
