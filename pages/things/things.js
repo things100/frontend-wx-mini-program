@@ -162,5 +162,11 @@ Page({
         });
         this.onCloseAddThing();
         this.loadData();
+    },
+    onThingTitleClick(event){
+        console.log(event)
+        this.setData({
+            activeNames:event.detail
+        })
     }
 })

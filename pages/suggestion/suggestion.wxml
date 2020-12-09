@@ -1,2 +1,9 @@
-<!--pages/suggestion/suggestion.wxml-->
-<text>pages/suggestion/suggestion.wxml</text>
+
+
+<f-thing-record resourceType="{{1}}" resourceContent="1"></f-thing-record>
+
+
+<f-thing-record resourceType="{{2}}" resourceContent="1"></f-thing-record>
+
+
+<f-thing-record resourceType="{{3}}" resourceContent="1"></f-thing-record>

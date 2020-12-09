@@ -16,3 +16,24 @@ page{
 .cs-switch{
   z-index: 100 !important;
 }
+
+.button-container {
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
+}
+
+.cs {
+  background-color: #FF69B4 !important;
+  height: 90rpx !important;
+  width: 80% !important;
+  left: 10% !important;
+}
+
+.full-width{
+  width: 100% !important;
+}
+
+.full-height{
+  height: 100% !important;
+}

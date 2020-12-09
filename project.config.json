@@ -90,6 +90,11 @@
                     "pathName": "pages/thing-add/thing-add",
                     "query": "thingGroupId=5",
                     "scene": null
+                },
+                {
+                    "name": "pages/suggestion/suggestion",
+                    "pathName": "pages/suggestion/suggestion",
+                    "scene": null
                 }
             ]
         }

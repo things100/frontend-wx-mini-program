@@ -40,15 +40,3 @@ swiper {
 .description {
     font-size: medium;
 }
-.button-container {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-}
-
-.cs {
-    background-color: #FF69B4 !important;
-    height: 90rpx !important;
-    width: 80% !important;
-    left: 10% !important;
-}

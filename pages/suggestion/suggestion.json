@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "f-thing-record":"../../components/thing-record/index"
+  }
 }

@@ -1,29 +1,38 @@
 <view class="container">
     <image class="bg-img" src="{{thingGroup.cover}}" mode="aspectFill"></image>
     <view class="content-container">
+        <!-- 顶部事情组描述 -->
         <scroll-view class="thing-group-description" scroll-y="{{true}}">
             <text>
                 {{thingGroup.description}}
             </text>
         </scroll-view>
         <van-progress color="#FF69B4" percentage="{{progress}}" />
-
+        <!-- 事项列表 -->
         <block wx:for="{{things}}" wx:key="index">
             <view class="title-row">
                 <text class="sortNum">{{item.sortNum}}</text>
-                <van-checkbox data-index="{{index}}" value="{{ item.complete  }}" shape="round" checked-color="#FF69B4"
-                    bind:change="onCompleteChange">
-                    <text class="title">{{item.title}}</text>
-                </van-checkbox>
+                <view class="full-width">
+                    <van-checkbox custom-class='full-width' data-index="{{index}}" label-disabled value="{{ item.complete  }}" shape="round"
+                        checked-color="#FF69B4" bind:change="onCompleteChange">
+                        <van-collapse value="{{ activeNames }}" bind:change="onThingTitleClick">
+                            <van-collapse-item title="{{item.title}}" name="1">
+                                    <image></image>
+                            </van-collapse-item>
+                        </van-collapse>
+                    </van-checkbox>
+                </view>
             </view>
         </block>
     </view>
 
+    <!-- 添加新事项的按钮 -->
     <view class="button-container">
         <van-button custom-class="cs" icon='add' hairline round bind:tap="addThing" type='primary' size="normal">添加新事项
         </van-button>
     </view>
 
+    <!-- 添加新事项 -->
     <van-popup round custom-style="height: 30%" closeable position="bottom" show="{{ showAddThing }}"
         bind:close="onCloseAddThing">
         <view class="add-thing-container">

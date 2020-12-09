@@ -1,0 +1,14 @@
+<view>
+    <!-- 文本 -->
+    <block wx:if="{{resourceType==1}}">
+        <text>{{resourceContent}}</text>
+    </block>
+    <!-- 图片 -->
+    <block wx:elif="{{resourceType==2}}">
+        <image src="{{resourceContent}}"></image>
+    </block>
+    <!-- 视频 -->
+    <block wx:elif="{{resourceType==3}}">
+        <video src="{{resourceContent}}"></video>
+    </block>
+</view>
